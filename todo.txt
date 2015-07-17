@@ -1,0 +1,2 @@
+rails generate scaffold emploee emploee_id:integer first_name:text last_name:text start_date:date job_id:integer salary:decimal manager_id:integer department_id:integer
+
