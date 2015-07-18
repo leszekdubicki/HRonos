@@ -1,7 +1,6 @@
-class CreateEmploees < ActiveRecord::Migration
+class CreateEmployees < ActiveRecord::Migration
   def change
-    create_table :emploees do |t|
-      t.integer :emploee_id
+    create_table :employees do |t|
       t.text :first_name
       t.text :last_name
       t.date :start_date

@@ -1,20 +1,16 @@
-<%= form_for(@emploee) do |f| %>
-  <% if @emploee.errors.any? %>
+<%= form_for(@employee) do |f| %>
+  <% if @employee.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@emploee.errors.count, "error") %> prohibited this emploee from being saved:</h2>
+      <h2><%= pluralize(@employee.errors.count, "error") %> prohibited this employee from being saved:</h2>
 
       <ul>
-      <% @emploee.errors.full_messages.each do |message| %>
+      <% @employee.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :emploee_id %><br>
-    <%= f.number_field :emploee_id %>
-  </div>
   <div class="field">
     <%= f.label :first_name %><br>
     <%= f.text_area :first_name %>
