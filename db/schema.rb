@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150713205535) do
+ActiveRecord::Schema.define(version: 20150717165329) do
+
+  create_table "emails", force: :cascade do |t|
+    t.integer  "employee_id"
+    t.string   "email"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "emails", ["employee_id"], name: "index_emails_on_employee_id"
 
   create_table "emploees", force: :cascade do |t|
     t.integer  "emploee_id"
