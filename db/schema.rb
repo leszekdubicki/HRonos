@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150717165329) do
+ActiveRecord::Schema.define(version: 20150718125428) do
 
   create_table "emails", force: :cascade do |t|
     t.integer  "employee_id"
@@ -22,8 +22,7 @@ ActiveRecord::Schema.define(version: 20150717165329) do
 
   add_index "emails", ["employee_id"], name: "index_emails_on_employee_id"
 
-  create_table "emploees", force: :cascade do |t|
-    t.integer  "emploee_id"
+  create_table "employees", force: :cascade do |t|
     t.text     "first_name"
     t.text     "last_name"
     t.date     "start_date"

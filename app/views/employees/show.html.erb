@@ -34,6 +34,16 @@
   <strong>Department:</strong>
   <%= @employee.department_id %>
 </p>
+<h2>Add an email:</h2>
+<%= form_for([@employee, @employee.emails.build]) do |f| %>
+  <p>
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
 
 <%= link_to 'Edit', edit_employee_path(@employee) %> |
 <%= link_to 'Back', employees_path %>
