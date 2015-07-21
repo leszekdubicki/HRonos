@@ -24,17 +24,21 @@ class EmailsController < ApplicationController
   # POST /emails
   # POST /emails.json
   def create
-    @email = Email.new(email_params)
-
-    respond_to do |format|
-      if @email.save
-        format.html { redirect_to @email, notice: 'Email was successfully created.' }
-        format.json { render :show, status: :created, location: @email }
-      else
-        format.html { render :new }
-        format.json { render json: @email.errors, status: :unprocessable_entity }
-      end
-    end
+    @employee = Employee.find(params[:employee_id])
+    #@email = Email.new(email_params)
+    @email = @employee.emails.create(params[:email])
+    redirect_to employee_path(@employee)
+    
+    #chenged according to guides.rubyrails.org the-model section (added another model. this one was scaffolded)
+    #respond_to do |format|
+    #  if @email.save
+    #    format.html { redirect_to @email, notice: 'Email was successfully created.' }
+    #    format.json { render :show, status: :created, location: @email }
+    #  else
+    #    format.html { render :new }
+    #    format.json { render json: @email.errors, status: :unprocessable_entity }
+    #  end
+    #end
   end
 
   # PATCH/PUT /emails/1

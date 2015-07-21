@@ -43,5 +43,7 @@ group :development, :test do
   gem 'spring'
   #required for email validation:
   gem 'mail'
+  #for login, according to moodle instruction
+  gem 'devise'
 end
 

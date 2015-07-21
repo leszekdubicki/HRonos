@@ -14,7 +14,7 @@
   <tbody>
     <% @emails.each do |email| %>
       <tr>
-        <td><%= email.employee %></td>
+        <td><%= email.employee.first_name %></td>
         <td><%= email.email %></td>
         <td><%= link_to 'Show', email %></td>
         <td><%= link_to 'Edit', edit_email_path(email) %></td>

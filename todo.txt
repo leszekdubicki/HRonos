@@ -1,3 +1,6 @@
 rails generate scaffold employee emploee_id:integer first_name:text last_name:text start_date:date job_id:integer salary:decimal manager_id:integer department_id:integer
 
 rails g scaffold Email employee:references email:string
+rails g migration add_type_to_users type:string
+rails g model admin
+rails g model hrspecialist
