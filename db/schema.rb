@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150723180844) do
+ActiveRecord::Schema.define(version: 20150726151337) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -26,10 +26,12 @@ ActiveRecord::Schema.define(version: 20150723180844) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "username"
   end
 
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+  add_index "admins", ["username"], name: "index_admins_on_username", unique: true
 
   create_table "emails", force: :cascade do |t|
     t.integer  "employee_id"
@@ -50,7 +52,10 @@ ActiveRecord::Schema.define(version: 20150723180844) do
     t.integer  "department_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.integer  "user_id"
   end
+
+  add_index "employees", ["user_id"], name: "index_employees_on_user_id"
 
   create_table "managers", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -65,10 +70,12 @@ ActiveRecord::Schema.define(version: 20150723180844) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "username"
   end
 
   add_index "managers", ["email"], name: "index_managers_on_email", unique: true
   add_index "managers", ["reset_password_token"], name: "index_managers_on_reset_password_token", unique: true
+  add_index "managers", ["username"], name: "index_managers_on_username", unique: true
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -84,10 +91,12 @@ ActiveRecord::Schema.define(version: 20150723180844) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "type"
+    t.string   "username"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["username"], name: "index_users_on_username", unique: true
 
   create_table "vacation_requests", force: :cascade do |t|
     t.integer  "employee_id"

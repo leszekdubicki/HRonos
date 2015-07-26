@@ -7,3 +7,5 @@ rails g model hrspecialist
 nie wszystkie powyzsze udane
 rails generate controller vacationrequest new
 rails g scaffold VacationRequests employee:references start_date:date end_date:date comments:text manager_comments:text approved:boolean --force
+rails g migration add_user_to_employees user:references
+rails g migration add_username_to_users username:string:uniq
