@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Employee:</strong>
+  <%= @vacation_request.employee %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @vacation_request.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @vacation_request.end_date %>
+</p>
+
+<p>
+  <strong>Comments:</strong>
+  <%= @vacation_request.comments %>
+</p>
+
+<p>
+  <strong>Manager comments:</strong>
+  <%= @vacation_request.manager_comments %>
+</p>
+
+<p>
+  <strong>Approved:</strong>
+  <%= @vacation_request.approved %>
+</p>
+
+<%= link_to 'Edit', edit_vacation_request_path(@vacation_request) %> |
+<%= link_to 'Back', vacation_requests_path %>

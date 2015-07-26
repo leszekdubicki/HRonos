@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class HrspecialistTest < ActiveSupport::TestCase
+class VacationRequestTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

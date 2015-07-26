@@ -26,7 +26,8 @@ class EmailsController < ApplicationController
   def create
     @employee = Employee.find(params[:employee_id])
     #@email = Email.new(email_params)
-    @email = @employee.emails.create(params[:email])
+    #@email = @employee.emails.create(params[:email])
+    @email = @employee.emails.create(email_params)
     redirect_to employee_path(@employee)
     
     #chenged according to guides.rubyrails.org the-model section (added another model. this one was scaffolded)

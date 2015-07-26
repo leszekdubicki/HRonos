@@ -1,12 +1,31 @@
 Rails.application.routes.draw do
+
+  get 'manager_panel/index'
+
+  get 'employee_panel/index'
+
+  resources :vacation_requests
+  get 'vacationrequest/new'
+
+  get 'manager/index'
+  get 'employee_portal' => 'employee_panel#index'
+  get 'manager_portal' => 'welcome#index_manager'
+  #match 'home/newbill' => 'home#newbill', :as => :newbill
+
+  devise_for :managers
+  devise_for :admins
   devise_for :users
   resources :employees do
     resources :emails
+    resources :vacation_requests
+    resources :users
   end
   resources :emails
+  resources :vacation_requests
   get 'welcome/index'
   root 'welcome#index'
-
+  get  'admin/index'
+  get  'manager/index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

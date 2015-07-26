@@ -4,3 +4,6 @@ rails g scaffold Email employee:references email:string
 rails g migration add_type_to_users type:string
 rails g model admin
 rails g model hrspecialist
+nie wszystkie powyzsze udane
+rails generate controller vacationrequest new
+rails g scaffold VacationRequests employee:references start_date:date end_date:date comments:text manager_comments:text approved:boolean --force
